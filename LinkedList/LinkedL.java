@@ -21,6 +21,20 @@ public class LinkedL {
         head=newNode;
     }
 
+    //add new element at the end of the list
+    public void AddAtEnd(int data){
+        Node newNode= new Node(data);
+        if(head==null){
+            head=newNode;
+            return;
+        }
+        Node currentNode=head;
+        while (currentNode.next!=null) {
+            currentNode=currentNode.next;
+        }
+        currentNode.next=newNode;
+    }
+
     //printing entire linked list
     public void printList(){
         if(head==null){
@@ -40,6 +54,8 @@ public class LinkedL {
         LinkedL list= new LinkedL();
         list.AddAtBeg(1);
         list.AddAtBeg(2);
+        list.AddAtEnd(23);
+        list.AddAtEnd(24);
         list.printList();
     }
 }

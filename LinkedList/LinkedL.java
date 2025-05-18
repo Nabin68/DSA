@@ -35,6 +35,18 @@ public class LinkedL {
         currentNode.next=newNode;
     }
 
+    //add at kth position
+    public void AddAtPos(int data,int position){
+        Node newNode = new Node(data);
+        Node currentNode=head;
+        for(int i=1;i<position-1;i++){
+            currentNode=currentNode.next;
+        }
+        Node AfterNode=currentNode.next;
+        currentNode.next=newNode;
+        newNode.next=AfterNode;
+    }
+
     //printing entire linked list
     public void printList(){
         if(head==null){
@@ -56,6 +68,8 @@ public class LinkedL {
         list.AddAtBeg(2);
         list.AddAtEnd(23);
         list.AddAtEnd(24);
+        int pos=3;
+        list.AddAtPos(3, pos);
         list.printList();
     }
 }

@@ -47,6 +47,23 @@ public class LinkedL {
         newNode.next=AfterNode;
     }
 
+
+    // reversing a linked list
+    public void ReverseLinkedList() {
+    Node prev=null;
+    Node currNode=head;
+    Node next=null;
+
+    while (currNode != null) {
+        next = currNode.next;
+        currNode.next=prev;
+        prev=currNode;
+        currNode=next;
+    }
+    head=prev;
+}
+
+
     //printing entire linked list
     public void printList(){
         if(head==null){
@@ -58,7 +75,7 @@ public class LinkedL {
             System.out.print(current.data+"->");
             current=current.next;
         }
-        System.out.print("NULL");
+        System.out.print("NULL\n");
 
     }
 
@@ -70,6 +87,9 @@ public class LinkedL {
         list.AddAtEnd(24);
         int pos=3;
         list.AddAtPos(3, pos);
+        list.printList();
+        System.out.print("Reversing a linked list: ");
+        list.ReverseLinkedList();
         list.printList();
     }
 }
